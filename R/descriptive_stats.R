@@ -29,7 +29,7 @@ calc_mean <- function(x) {
 #' @examples
 #' calc_mean(c(1:10))
 calc_median <- function(x) {
-  median(x)
+  stats::median(x)
 }
 
 #' Calculate mode (handle ties and no mode cases)
@@ -55,7 +55,7 @@ calc_mode <- function(x) {
 #' @examples
 #' calc_q1(c(1:10))
 calc_q1 <- function(x) {
-  quantile(x, .25)
+  stats::quantile(x, .25)
 }
 
 #' Calculate third quartile (Q3)
@@ -68,7 +68,7 @@ calc_q1 <- function(x) {
 #' @examples
 #' calc_q3(c(1:10))
 calc_q3 <- function(x) {
-  quantile(x, .75)
+  stats::quantile(x, .75)
 }
 
 #' Calculate Interquartile Range
@@ -81,5 +81,5 @@ calc_q3 <- function(x) {
 #' @examples
 #' calc_iqr(c(1:10))
 calc_iqr <- function(x) {
-  quantile(x, .75)
+  stats::IQR(x)
 }
