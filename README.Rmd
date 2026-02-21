@@ -1,0 +1,81 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# descriptiveStats
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+`DescriptiveStats` is a lightweight R package providing basic descriptive statistics functions with robust input validation and informative messaging. It is designed to handle common edge cases such as missing values, empty vectors, and non-numeric inputs gracefully.
+
+## Installation
+
+You can install the development version directly from GitHub:
+
+```{r installation}
+# install.packages("devtools") # if not already installed
+# devtools::install_github("yifeng-wu/DescriptiveStats")
+```
+
+## Usage
+
+```{r usage}
+library(descriptiveStats)
+x <- c(1, 2, 3, 4, 5)
+```
+
+**Arithmetic Mean**
+
+```{r}
+calc_mean(x)
+```
+
+**Median**
+
+```{r}
+calc_median(x)
+```
+
+**Statistical Mode (Most Frequent Value)**
+
+```{r}
+# Single mode
+calc_mode(c(1, 2, 2, 3))
+
+# Multiple modes (tie)
+calc_mode(c(1, 1, 2, 2))
+
+# All values unique (all returned)
+calc_mode(c(1, 2, 3))
+```
+
+**First Quartile (Q1) and Third Quartile (Q3)**
+
+```{r}
+calc_q1(x)
+calc_q3(x)
+```
+
+**Interquartile Range (IQR)**
+
+```{r}
+calc_iqr(x)
+```
+
+**Handling of NA (missing) values**
+```{r}
+calc_mean(c(x, NA))
+```
+
